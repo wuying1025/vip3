@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 标签选择器  */
+        /* div{
+            background: blue;
+        } */
+        /* id选中器 */
+        #div1{
+            background: blueviolet;
+        }
+        .xx{
+            background: red;
+        }
+        /* class选择器 */
+        /* .a{
+            background: chartreuse;
+        } */
+        /* 群组选择器 */
+        /* 
+        #div1,.a {
+            background: coral;
+        } */
+        /* 后代选择器 */
+        /* #ul1 li{
+            border: 1px solid #000;
+        } */
+        /* 子代选择器 */
+        #ul1 > li{
+            border: 1px solid #000;
+        }
+        /* 伪类选择器 hover鼠标滑过 */
+        a:hover{
+            background: red;
+        }
+     
+    </style>
+</head>
+<!-- 选择器的优先级  （优先级相同 写在下边会把写在上边的覆盖）
+    style > id > class >标签 
+-->
+<body>
+    <!-- id属性 一个页面中id唯一  -->
+    <div id="div1" class="xx" >111</div>
+    <!-- 类  -->
+    <div class="a">22</div>
+    <div class="a">333</div>
+    <div>111111dhssfsd</div>
+    <ul id="ul1">
+        <li>
+            dfghkjlkl;
+           <ul>
+               <li>111</li>
+               <li>222</li>
+           </ul>
+        </li>
+        <li>sdfghjkl';</li>
+    </ul>
+    <ul>
+        <li>dfghkjlkl;</li>
+        <li>sdfghjkl';</li>
+    </ul>
+    <a href="http://www.baidu.com">百度</a>
+</body>
+
+</html>
