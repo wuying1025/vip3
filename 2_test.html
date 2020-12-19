@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        div{
+            background: green;
+        }
+    </style> -->
+    <!-- <link rel="stylesheet" href="2_test.css"> -->
+    <style>
+        /* #header{
+            background: red;
+        }
+        .aa{
+            background: green;
+        } */
+        /* div{
+            background: red;
+        } */
+        #header,.aa{
+            background: red;
+        }
+        /* 后代 */
+        #ul1 li{
+
+        }
+        /* 子代 */
+        #ul1 > li{
+
+        }
+
+        /* 伪类 */
+        a:hover{
+            background: red;
+        }
+        #header{
+            width: 700px;
+            height:600px;
+            /* 背景 */
+            /* background: green; */
+            /* background-color:green ;
+            background-image: url(images2/2.jpg);
+            background-repeat: no-repeat;
+            background-position: 200px 50px; */
+            background: green url(images2/2.jpg) no-repeat 200px 50px;
+            /* 字体 */
+            font-size:50px ;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            /* 100=900 bold(700) bolder(900)  400*/
+            font-weight: 700;
+            font-style: italic;
+
+            /* 文本 */
+            /* 水平对齐 */
+            /* text-align: center; */
+            /* 垂直 当行文本垂直居中  line-height = height*/
+            /* line-height: 600px; */
+            text-indent: 50px;
+            /* 文本修饰underline overline line-through none  */
+            text-decoration:none ;
+
+            color:red;
+            /* 
+            inline 行级元素  多个占一行  宽度是内容撑的不能设置宽高
+            block 块级元素 自己占一行    可以设置宽高 
+            inline-block  行级块元素  多个占一行  可以设置宽高
+            none 隐藏
+             */
+            /* display: */
+        }
+
+        a{
+            width: 200px;
+            height: 200px;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- style  > id > class （伪类）> 标签  -->
+    <!-- <div style="background: red;">dfghjkl</div> -->
+
+    <div id="header">哈哈哈 呵呵呵呵哈哈哈 呵呵呵呵哈哈哈 呵呵呵呵哈哈哈 呵呵呵呵哈哈哈 呵呵呵呵哈哈哈 呵呵呵呵哈哈哈 呵呵呵呵</div>
+    <div class="aa">fghjkl</div>
+    <div class="aa">dfghjlk;l';</div>
+
+    <ul id="ul1">    
+        <li>
+            11
+            <ul>
+                <li></li>
+            </ul>
+        </li>
+    </ul>
+    <ul>
+        <li>2222</li>
+    </ul>
+    <a href="#">baidu </a>
+    <a href="#">baidu </a>
+</body>
+</html>
