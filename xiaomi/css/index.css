@@ -7,3 +7,36 @@
     /* 背景图片大小  宽度自适应 高度120*/
     background-size:auto 120px ;
 }
+/* nav开始 */
+.nav{
+    background: #333;
+    height: 40px;
+}
+.nav-content{
+    width: 1226px;
+    /* background: #f00; */
+    height: 40px;
+    /* 块级元素水平居中 margin:0 auto (上下0 左右自适应) */
+    margin:0 auto;
+}
+.nav-left{
+    float: left;
+}
+.nav-left li{
+    float: left;
+    
+}
+.nav-left li a{
+    color:#b0b0b0;
+    line-height: 40px;
+    padding:0 7px;
+    font-size: 12px;
+    border-right: 1px solid #424242;
+}
+/* 最后一个边框去掉 */
+.nav-left .left-last a{
+    border-right: none;
+}
+.nav-right{
+    float: right;
+}
