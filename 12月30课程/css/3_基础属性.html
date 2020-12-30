@@ -1,36 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         /* 宽高 */
-        #div1{
-           
+        #div1 {
+
             /* 宽 */
-            width:600px;
+            width: 600px;
             /* 高 */
-            height:500px;
+            height: 500px;
             /* 背景 */
             background: red;
             background-image: url(../images/1.jpg);
-            background-repeat: no-repeat; /* repeat|no-repeat */
-            /* 背景定位  水平(固定值 left|ceter|right)  垂直(固定值|top|center|bottom)  可以实现css精灵|雪碧图*/  
+            background-repeat: no-repeat;
+            /* repeat|no-repeat */
+            /* 背景定位  水平(固定值 left|ceter|right)  垂直(固定值|top|center|bottom)  可以实现css精灵|雪碧图*/
             /* background-position: 100px 200px; */
             background-position: center center;
-            background:red url(../images/1.jpg) no-repeat center center;
+            background: red url(../images/1.jpg) no-repeat center center;
+        }
+        #div2{
+            width: 300px;
+            height: 200px;
+            background: #cccccc;
+            /* 字体相关 */
+            font-size:20px ;
+            font-family: cursive;
+            /* 100 - 900   400(默认值) 700（blod） 90(bolder)*/
+            font-weight: 700;
+            /* nomal  italic*/
+            font-style: italic;
+
+            /* 文本先关属性 */
+            /* 水平对齐 left|center|right */
+            text-align: center;
+            /* 文本垂直对齐  单号文本垂直对齐行高=height*/
+            line-height: 200px;
+
+        }
+        #div3{
+            /* 首行缩进 */
+            text-indent:100px;
+            /* 文本修饰underline|overline|line-through|none */
             
+            /* text-decoration:underline ; */
+            /* text-decoration:overline; */
+            /* text-decoration: line-through; */
+            text-decoration: none;
+            /* 文本颜色 */
+            color:red;
         }
 
-
+        /* 列表样式 */
+        ul{
+            list-style: none;
+        }
+        /* 轮廓 */
+        input{
+            outline: none;
+        }
     </style>
 </head>
-<body>
+
+<body style="height:3000px">
     <div id="div1">
-hahah
+        hahah
     </div>
-
-
+    <div id="div2">我是div2</div>
+    <div id="div3">我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2我是div2</div>
+    <ul>
+        <li>111</li>
+    </ul>
+    <input type="text">
 </body>
+
 </html>
