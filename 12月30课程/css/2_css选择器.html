@@ -20,17 +20,49 @@
         } */
         /* 后代选择器 */
         /* id为ul1中 的li元素 */
-        #ul1 li{ 
+        /* #ul1 li{ 
             background: hotpink;
-        }
+        } */
         /* 伪类选择器    hover鼠标划入*/
-        a:hover{
+        /* a:hover{
             background: indigo;
+        } */
+        /* 群组 （分组）选择器 */
+        /* #div2,.aa{
+            background: red;
+        }  */
+        /*100  1 */
+        #ul1 li{
+            background: blue;
         }
+        /* 100 10 */
+        #ul1 .list{
+            background: red;
+        }
+        /* div{
+            background: green;
+        }*/
+        /* div{
+            background: hotpink;
+        } 
+        .xx{
+            background: indigo;
+        } */
     </style>
+    <link rel="stylesheet" href="1_test.css">
 </head>
 <body>
-
+    <!-- css选择器
+        id选择器
+        class选择器
+        后代选择器
+        群组选择器
+        伪类选择器
+        标签选择器
+    
+        style内联样式 1000> id选择器 100>class|伪类 10> 标签选择器 1
+    -->
+    <div id="div1" class="xx">div1111</div>
     <div>aa</div>
     <div id="div2">aa222</div>
     <div class="aa">aa</div>
@@ -39,14 +71,21 @@
     <p>qwerftgyh</p>
     <h2>dfghjkjhgfgh</h2>
     <ul id="ul1">
-        <li>111</li>
-        <li>222</li>
+        <li class="list">111</li>
+        <li  class="list">222</li>
     </ul>
     <ul>
         <li>111</li>
         <li>222</li>
     </ul>
     <a href="#">baidu</a>
-    
+    <!-- <div class="a1">
+        <div class="a2">
+            <div>
+                ..
+                <div class="a11" id="div3"></div>
+            </div>
+        </div>
+    </div> -->
 </body>
 </html>
