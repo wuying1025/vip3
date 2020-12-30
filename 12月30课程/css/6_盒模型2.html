@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            padding: 20px;
+            border:10px solid #000;
+            
+            box-sizing: border-box; 
+
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        标准盒模型 
+            width属性 element内容的宽度是200
+        怪异盒模型（当ie6和ie6下浏览器中DOCTYPE 表现成怪异 ）
+            width属性 = element内容宽度+padding+ border
+        转换 box-sizing:content-box(标准盒模型) |boder-box(怪异盒模型)
+     -->
+    <div id="div1">
+        哈哈哈哈
+    </div>
+
+    
+
+
+
+
+</body>
+</html>
