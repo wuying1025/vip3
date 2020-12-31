@@ -27,6 +27,11 @@
 .nav-right{
     float: right;
 }
+/* .nav-left lihover的时候 后代元素a */
+.nav-left li:hover a,.nav-right li:hover a{
+    color:#fff;
+}
+
 /* .nav-right li{
     float: left;
     line-height: 40px;
@@ -43,4 +48,32 @@
     color: #b0b0b0;
     text-align: center;
     font-size: 12px;
+    height: 40px;
+    /* 鼠标划入手状 */
+    cursor: pointer;
+    position: relative;
+}
+.cart:hover{
+    background: #fff;
+    color:#ff6700;
+}
+.cart-list{
+    width: 315px;
+    height: 100px;
+    background: #fff;
+    /* 边框阴影 水平偏移  垂直偏移 模糊度 外延值  颜色*/
+    box-shadow: 0px 0px 11px 2px rgba(0,0,0,0.2);
+    position: absolute;
+    right:0px;
+    top:40px;
+    /* 隐藏 */
+    /* display: none; */
+    height:0;
+    /* 过渡 属性 执行时间 运动方式（匀速）  */
+    /* transition:height 0.3s linear; */
+}
+.cart:hover .cart-list{
+    /* 显示 */
+    /* display: block; */
+    height: 100px;
 }
