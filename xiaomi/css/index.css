@@ -9,34 +9,37 @@
 }
 /* nav开始 */
 .nav{
+    height: 40px;
     background: #333;
-    height: 40px;
 }
-.nav-content{
+.wrapper{
     width: 1226px;
-    /* background: #f00; */
     height: 40px;
-    /* 块级元素水平居中 margin:0 auto (上下0 左右自适应) */
-    margin:0 auto;
+    /* background: #f00; */
+    margin: 0 auto;
 }
 .nav-left{
     float: left;
 }
-.nav-left li{
+.nav-left li,.nav-right li{
     float: left;
-    
-}
-.nav-left li a{
-    color:#b0b0b0;
     line-height: 40px;
-    padding:0 7px;
-    font-size: 12px;
-    border-right: 1px solid #424242;
 }
-/* 最后一个边框去掉 */
-.nav-left .left-last a{
-    border-right: none;
+/* 群组选择器 */
+.nav-left li a,.nav-right li a{
+    color: #b0b0b0;
+    font-size: 12px;
+    padding: 0 7px;
 }
 .nav-right{
     float: right;
 }
+/* .nav-right li{
+    float: left;
+    line-height: 40px;
+} */
+/* .nav-right li a{
+    color:  #b0b0b0;
+    font-size: 12px;
+    padding: 0 7px;
+} */
