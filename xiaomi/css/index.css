@@ -77,3 +77,21 @@
     /* display: block; */
     height: 100px;
 }
+/* header */
+.header-box{
+    /* background: red; */
+    overflow: hidden;
+    height: 100px;
+}
+.header-logo{
+    background: orange;
+    float: left;
+    margin-top: 22px;
+}
+.header-list{
+    float: left;
+    margin-left: 190px;
+}
+.search{
+    float: right;
+}
