@@ -149,3 +149,20 @@ height: 100px;
     border:1px solid #ff6700;
     color:#fff;
 }
+/* 轮播图开始 */
+.slide-box{
+    height: 460px;
+    background: #ff0000;
+    position: relative;
+}
+.img-box img{
+    width:100%;
+}
+.cate-box{
+    height: 460px;
+    width: 234px;
+    background: rgba(105,101,101,.6);
+    position: absolute;
+    left:0;
+    top:0;
+}
