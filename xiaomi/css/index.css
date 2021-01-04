@@ -16,6 +16,7 @@
 }
 .nav-left li,.nav-right li{
     float: left;
+    height: 40px;
     line-height: 40px;
 }
 /* 群组选择器 */
@@ -79,19 +80,38 @@
 }
 /* header */
 .header-box{
-    /* background: red; */
-    overflow: hidden;
+height: 100px;
+background: #FF0;
+}
+/* 
+    文本 行元素 行级块元素 水平居中->父元素设置text-align:center
+    块级元素  水平居中  ->块级元素自己设置margin：0 auto;
+*/
+.logo-box{
+    float: left;
+    background: #ff6700;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    margin-top:23px;
+    margin-right: 190px;
+}
+.menu-box{
+    float: left;
+}
+.menu-box li{
+    float: left;
     height: 100px;
+    line-height: 100px;
 }
-.header-logo{
-    background: orange;
-    float: left;
-    margin-top: 22px;
+.menu-box li a{
+    color: #333;
+    font-size: 16px;
+    padding: 0 10px;
 }
-.header-list{
-    float: left;
-    margin-left: 190px;
+.menu-box li:hover a{
+    color: #ff6700;
 }
-.search{
+.search-box{
     float: right;
 }
