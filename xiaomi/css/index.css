@@ -166,3 +166,35 @@ height: 100px;
     left:0;
     top:0;
 }
+.cate-list{
+    padding:20px 0;
+}
+/* 子代选择器  */
+.cate-list >li{
+    height: 42px;
+    line-height: 42px;
+    padding-left:30px;
+    padding-right:18px;
+    color: #fff;
+}
+.cate-list >li:hover{
+    background:#ff6700 ;
+
+}
+.main-menu .icon-dayuhao{
+    float: right;
+    font-size: 14px;
+}
+.sub-menu-box{
+    height: 460px;
+    width: 300px;
+    background: #ff0000;
+    position: absolute;
+    left:234px;
+    top:0;
+    /* 先隐藏 */
+    display: none;
+}
+.main-menu:hover .sub-menu-box{
+    display: block;
+}
