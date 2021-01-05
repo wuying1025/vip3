@@ -194,7 +194,7 @@ height: 100px;
     top:0;
     box-shadow: 0 8px 16px rgba(0,0,0,.18);
     /* 先隐藏 */
-    /* display: none; */
+    display: none;
 }
 .main-menu:hover .sub-menu-box{
     display: block;
@@ -216,4 +216,54 @@ height: 100px;
 }
 .sub-menu-box ul{
     float: left;
+    width:248px;
+}
+/*  */
+.channel-left{
+    background: #5f5750;
+    width: 234px;
+    padding:3px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+.channel-left li{
+    width:76px;
+    height: 84px;
+    float: left;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+.channel-left .left-img{
+    width: 24px;
+    display: block;
+    margin:18px auto 4px;
+    opacity: 0.7;
+}
+.channel-left .left-text{
+    opacity: 0.7;
+}
+.channel-left li:hover .left-img,.channel-left li:hover .left-text{
+    opacity: 1;
+}
+
+/* after伪元素 生成左边线 */
+.channel-left li::after{
+    content:"";
+    position: absolute;
+    left:0;
+    top:6px;
+    width: 1px;
+    height: 70px;
+    background: #665e57;
+}
+.channel-left li::before{
+    content: "";
+    position: absolute;
+    left:6px;
+    top:0px;
+    width:64px;
+    height:1px;
+    background: #665e57;
 }
