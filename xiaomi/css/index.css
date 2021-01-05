@@ -219,17 +219,20 @@ height: 100px;
     width:248px;
 }
 /*  */
+.channel-box{
+    margin-top:15px;
+}
 .channel-left{
     background: #5f5750;
     width: 234px;
     padding:3px;
     box-sizing: border-box;
     overflow: hidden;
-
+    float: left;
 }
 .channel-left li{
     width:76px;
-    height: 84px;
+    height: 82px;
     float: left;
     text-align: center;
     color: #fff;
@@ -266,4 +269,21 @@ height: 100px;
     width:64px;
     height:1px;
     background: #665e57;
+}
+.channel-right{
+    float: right;
+    width:992px;
+    padding-left:1px;
+    box-sizing: border-box;
+}
+.channel-right a{
+    /* margin-left:14px; */
+    /* overflow: hidden; */
+    width: 316px;
+    height: 170px;
+    float: left;
+    margin-left:14px;
+}
+.channel-right img{
+    width:100%;
 }
