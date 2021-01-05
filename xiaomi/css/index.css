@@ -187,14 +187,33 @@ height: 100px;
 }
 .sub-menu-box{
     height: 460px;
-    width: 300px;
-    background: #ff0000;
+    width:992px;
+    background: #fff;
     position: absolute;
     left:234px;
     top:0;
+    box-shadow: 0 8px 16px rgba(0,0,0,.18);
     /* 先隐藏 */
-    display: none;
+    /* display: none; */
 }
 .main-menu:hover .sub-menu-box{
     display: block;
+}
+.sub-menu-box .sub-img{
+    width: 40px;
+    height:40px;
+    /* 两个兄弟 居中对齐 */
+    vertical-align: middle;
+}
+.sub-menu-box .sub-text{
+    color:#333;
+}
+.sub-menu{
+    padding:18px 20px;
+    height: 40px;
+    width:225px;
+    line-height: 40px;
+}
+.sub-menu-box ul{
+    float: left;
 }
