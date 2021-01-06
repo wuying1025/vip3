@@ -320,3 +320,52 @@ height: 100px;
     color:#b0b0b0;
     font-size: 12px;
 }
+/* .sale-content{
+    overflow: hidden;
+} */
+.sale-time{
+    width: 234px;
+    height: 340px;
+    background: #f1eded;
+    float: left;
+}
+.sale-list-box{
+    width: 978px;
+    float: right;
+}
+.start-time{
+    font-size: 21px;
+    color: #ef3a3b;
+    text-align: center;
+    padding-top:54px;
+}
+.sale-img{
+    display: block;
+    margin:25px auto;
+}
+.end-time{
+    color: rgba(0,0,0,.54);
+    font-size: 15px;
+    text-align: center;
+}
+.time-num{
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    background: #605751;
+    font-size: 24px;
+    color:#fff;
+    text-align: center;
+    line-height: 46px;
+}
+.time-box{
+    text-align: center;
+    margin-top:28px;
+}
+.time-dottod{
+    font-size:28px;
+    color:#605751;
+    height: 46px;
+    line-height: 46px;
+    display: inline-block;
+}
