@@ -369,3 +369,20 @@ height: 100px;
     line-height: 46px;
     display: inline-block;
 }
+/* 开始设置列表样式 */
+/* 列表浮动  */
+.sale-list{
+    width: 234px;
+    height: 340px;
+    background: #ff0000;
+    float: left;
+    margin-right: 14px;
+}
+/* ul 宽度至少为6个li+6个margin 的宽度，保证6个li能水平放置 */
+.sale-list-wrapper{
+    width: 1488px;
+}
+/* 固定宽度的父元素 width: 978px; overflow:hidden溢出隐藏 */
+.sale-list-box{
+    overflow: hidden;
+}
