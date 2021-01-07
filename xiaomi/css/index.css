@@ -374,9 +374,11 @@ height: 100px;
 .sale-list{
     width: 234px;
     height: 340px;
-    background: #ff0000;
+    background: #fff;
     float: left;
     margin-right: 14px;
+  
+    
 }
 /* ul 宽度至少为6个li+6个margin 的宽度，保证6个li能水平放置 */
 .sale-list-wrapper{
@@ -385,4 +387,50 @@ height: 100px;
 /* 固定宽度的父元素 width: 978px; overflow:hidden溢出隐藏 */
 .sale-list-box{
     overflow: hidden;
+}
+.sale-list .prod-img{
+    width: 160px;
+    height: 160px;
+    display: block;
+    margin:39px auto 22px;
+}
+.sale-list .prod-title{
+    color:#212121;
+    font-size:14px;
+    font-weight: 400;
+    text-align: center;
+    /* 单行文本溢出... */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    /* 有高度  溢出 */
+    height: 21px;
+    padding:0 20px 3px;
+
+}
+.sale-list .prod-desc{
+    font-size:12px;
+    color:#b0b0b0;
+    /* 单行文本溢出... */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 21px;
+
+    text-align: center;
+    padding: 0 20px;
+}
+.sale-list .prod-price{
+    text-align: center;
+    margin-top:12px;
+}
+.sale-list .new-price{
+    color: #ff6709;
+    font-size:14px;
+}
+.sale-list .old-price{
+    color:#b0b0b0;
+    font-size:14px;
+    text-decoration: line-through;
+    
 }
