@@ -431,6 +431,7 @@ height: 100px;
 .sale-list .old-price{
     color:#b0b0b0;
     font-size:14px;
+    /* 文本 修饰中划线 */
     text-decoration: line-through;
     
 }
