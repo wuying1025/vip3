@@ -435,3 +435,32 @@ height: 100px;
     text-decoration: line-through;
     
 }
+.banner{
+    display: block;
+    margin-top:20px;
+}
+.banner img{
+    width: 1226px;
+}
+/* 手机模块开始 */
+.mobile-box{
+    margin-top:20px;
+}
+.mobile-header h3{
+    height: 58px;
+    line-height: 58px;
+    color:#333;
+    font-size:22px;
+    font-weight: 200;
+
+}
+.mobile-content-left img{
+    width: 234px;
+    float: left;
+}
+.mobile-content-right{
+    width: 992px;
+    float: right;
+    background: #f00;
+    height: 600px;
+}
