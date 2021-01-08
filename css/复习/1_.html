@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        #div1{
+            /* text-align: center; */
+        }
+        #div2::before{
+            content: "111";
+        }
+        #div2::after{
+            content: "";
+            font-style: italic;
+        }
+        #div3{
+            /* width: 200px; */
+            height: 200px;
+            /* background: #ff0000; */
+            margin:0 auto;
+        }
+        .aa{
+            display: inline-block;
+            background: red;
+        }
+        #div5{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        #div6{
+            background: #ccc;
+        }
+        #div7{
+            width: 200px;
+            height: 200px;
+            background: #0000ff;
+            float: right;
+        }
+        #div8{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+            float: right;
+        }
+        .clearfix::after{
+            content:'';
+            display: block;
+            clear: both;
+        }
+    </style>
+    <!-- 
+        css选择器
+        id选择器 
+        class 类选择器
+        .a .b  后代选择器
+        .a > .b 子代选择器 
+        .c,.d   群组选择器 
+        a:hover  伪类选择器
+        ::before  ::after  伪元素选择器
+
+        优先级  style > id > class|伪类选择器 > 标签 |伪元素选择器
+
+
+        背景
+            background-color
+            background-image:url();
+            background-repeat:no-repeat|repeat
+            水平 固定值| left  center right 
+            水平 固定值| top  center bottom 
+            background-position:水平 垂直;
+        
+        字体
+            font-size:16px;
+            font-weight:100-900;  400默认值  
+            font-family:;
+            font-style:italic |normal 
+
+        文本相关 
+            水平对齐(文本 行元素 行级块元素)   text-align:left|center|right; 
+            垂直对齐 line-height = height 
+            首行缩进 text-indent: 20px; 
+            文本修饰 text-decoration:underline  |overline |line-through;
+
+        块级元素水平居中 
+            margin:0 auto;
+
+        列表 
+        ul{
+            list-style:none
+        }
+        轮廓  outline:none;
+
+        display: inline |block |inline-block|none
+            行元素（inline）      多个占一行 不能设置宽高  a span i strong em
+            块元素(block)      自己占一行 可以设置宽高  ul li div p h1-h6
+            行级块元素(inline-block)   多个占一行  可以设置宽高 input  button
+                两个行块元素之间的空格  去掉回车+空格
+                父元素设置font-size:0;
+                浮动
+            隐藏 none
+
+        盒模型
+            内容+padding +border+margin 
+
+            标准盒模型
+                width的值 指的是内容宽度
+                元素整体占的宽度 内容宽度 + padding +border
+
+            怪异盒模型
+                width的值 指的是内容宽度 + padding +border
+                元素整体占的宽度  width
+            转化  box-sizing: border-box(怪异) | content-box（标准）
+
+        
+        定位 
+            position  
+                relative  相对定对， 相对于自己初始位置  定位后空间不释放
+                absolute  绝对定位， 相对于最近已定位的祖先元素  ，没有最近已定位的祖先元素 相对于body  空间释放；
+                fixed 固定定位 相对于浏览器的可视窗口  空间释放；
+                static 默认值
+
+        浮动
+
+            float:left | right  浮动的元素会脱离文档流 空间释放
+            解决元素浮动父元素塌陷
+                1 添加高度
+                2 父元素添加overflow:hidden
+                3 浮动元素的下边添加一个块级元素 clear:both
+                4 clearfix
+                    .clearfix::after{
+                        content:'';
+                        display: block;
+                        clear: both;
+                    }
+     -->
+</head>
+<body>
+    <input type="text">
+    <div id="div1" >
+        啊哈哈哈 <span style="text-align:center">heheh</span>
+    </div>
+    <div id="div3">
+        我是div3
+    </div>
+    <div class="a">
+        <div class="b">
+            <div class="b"></div>
+        </div>
+    </div>
+    <div class="c"></div>
+    <div class="d"></div>
+    <a href="#">hahah</a>
+    <div id="div2">
+        哈哈哈
+    </div>
+    <!-- <div class="aa">111</div>
+    <div class="aa">222</div> -->
+    <div id="div5">
+        哈哈哈
+    </div>
+
+    <div id="div6" class="clearfix">
+        <div id="div7"></div>
+        <div id="div8"></div>
+        <!-- <div style="clear:both"></div> -->
+    </div>
+
+</body>
+</html>
