@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            加 字符串+  字符串拼接
+            - * / 先隐式计算 如果算不了返回NaN(not a number)
+        */
+        var str1 = "hello";
+        console.log(str1 + "world");  //"helloworld"
+        var num = 1;
+        var num2 = 3;
+        console.log(num + num2);  //4
+
+        var str2 = "abc";
+        var num3 = 123;
+
+        console.log(str2 + num3);  //"abc123"
+
+        var num4 = "1";
+        var num5 = 3;
+        console.log(num5 + num4);  //"13"
+
+
+        var num6 = 100;
+        var num7 = '5';
+        var num8 = "abc"
+        console.log(num6 - num7);  //95
+        console.log(num6 - num8);
+
+        var S1 = "helllo";
+        S1 += "!!!";
+        console.log(S1)
+        // S1 = S1 + "!!!"
+        //  ++  前++  先+1再参与运算   后++  先参与运算再++  
+        var c = 100;
+        console.log(c++);  //100 
+        // c = 101
+        console.log(++c);  //102
+
+
+        var d = 50;
+        var f = 100
+        console.log(d++ * f)   //5000
+
+        console.log(d) //51
+
+        console.log("23+45="+(23+45)); //"23+45=68"
+
+        console.log("23+45="+23+45); //"23+45=2345"
+
+        // alert('hahah')
+        console.log(2<4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
