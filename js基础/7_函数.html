@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+            f1()
+            // 有函数提升
+            function f1(){
+
+            }
+            f1()
+            // 没有函数提升
+            var f2 = function(x,y){  //x y形参
+                return x+y; //返回值
+            }
+
+            fn(1,2) //实参
+        */ 
+        fn();
+        // function 定义的函数 有函数提升
+        function fn(){
+            console.log('哈哈哈')
+        }
+        // function add(x,y){  //形参
+        //     console.log(x+y)
+        // }
+
+        // add(1,2); //实参
+
+        //  1 2返回计算结果  return函数的返回值 默认返回undefined  
+        // function add1(x,y){
+        //     return x+y;
+        // }
+
+        // var result = add1(2,3);  
+        // alert(result)
+        f1();
+        var f1 = function(){
+            console.log(111)
+        }
+
+
+    </script>
+</body>
+</html>
