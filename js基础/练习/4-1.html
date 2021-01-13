@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 1.	编写程序，计算 1!+2!+3!+…..＋10！的结果。
+
+        // 求n的阶乘  1*2*3*4...*n
+        function fn(n){
+            var res = 1;
+            for(var i=1; i<=n; i++){
+                res *= i;
+            }
+            return res;
+        }
+        var sum = 0;
+        for(var i=1; i<=10; i++){
+            sum += fn(i);
+        }
+        console.log(sum);
+
+        
+
+
+
+
+    </script>
+</body>
+</html>
