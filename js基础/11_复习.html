@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            js数据类型
+                基本数据类型 (栈)
+                    string number boolean null undefined
+                    什么时候会undefined
+                        1 定义变量，但是没有赋值
+                        2 数组越界  返回undefined
+                        3 访问对象下没有的属性的时候  返回undefined
+                        4 函数没有return 返回值是undefined
+                引用数据类型 （堆）
+                    array object function 
+        
+        */ 
+        var a = "sggdfd";
+
+        var b;
+        console.log(b);
+        var arr = [1,2,3];
+        console.log(arr[5]);
+
+        var person = {
+            name:'zs',
+            age:28
+        }
+        console.log(person.school)
+
+
+        function fn(){
+            console.log('hahah');
+            // return '1'
+        }
+
+        console.log(  fn()  )
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
