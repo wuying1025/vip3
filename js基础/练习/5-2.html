@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 2.	在页面上编程输出100~1000之间的所有素数，并要求每行显示6个素数。 -->
+
+    <script>
+        // 1 封装一个方法，求是否是素数 ,返回值true (是素数)|false（不是素数）
+        function isPrinme(n){
+            if(n == 0){
+                return false;//不是素数
+            }
+            if( n == 1 || n == 2){
+                return true;
+            }
+            // for(var i=2; i<n-1; i++){
+            for(var i=2; i< Math.sqrt(n); i++){
+                if(n%i == 0){
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        var count = 0;
+        for(var j = 100; j<= 1000; j++){
+            if( isPrinme(j) ){
+                document.write(j+"&nbsp;");
+                count++;
+                if(count%6 == 0){
+                    document.write("<br>")
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
