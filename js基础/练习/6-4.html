@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 4.	设计一个函数DayOfYear(d)，它接收一个日期参数d，
+        返回一个该日期是所在年份的第几天，如DayOfYear(2000,2,8)的返回值是39.
+（提示：①定义一个数组months=new Array（31,28,31,30,31,30,31,31,30,31，30,31）
+记录每个月少天：②定义一个辅助函数IsLeapYear(y)判定某个年份是否闰年，以确定2月份的天数是28还是29。）
+ -->
+
+    <script>
+        // 判断是否是闰年
+        function isLeapYear(year) {
+            return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+        }
+        var arrMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        function DayOfYear(year, month, day) {
+            var allDay = 0;
+            if (isLeapYear(year)) {
+                arrMonth[1] = 29;
+            }
+            // 计算月天数
+            for(var i=0; i<month-1; i++){
+                allDay += arrMonth[i];
+            }
+
+            // 加当月的天数
+            allDay += day;
+            return allDay;
+        }
+
+       console.log( DayOfYear(2021, 03, 12) );
+
+    </script>
+
+</body>
+
+</html>
