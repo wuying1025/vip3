@@ -104,11 +104,24 @@
     <h2>啊哈哈哈哈多久啊哈哈哈哈哈哈哈哈</h2>
     <h2>啊哈哈哈哈多久啊哈哈哈哈哈哈哈哈</h2>
     <h2>啊哈哈哈哈多久啊哈哈哈哈哈哈哈哈</h2>
-    <div id="backTop" onclick="window.scrollTo(0,0)">
+    <div id="backTop" >
         ^
     </div>
     <script>
-        
+        var btn = document.getElementById('backTop');
+        btn.onclick = function(){
+            var timer = setInterval(function(){
+                // 获取当前滚动条滚动的高度  - 10
+                var scrollTop = document.documentElement.scrollTop;
+                if(scrollTop > 0){
+                    window.scrollTo(0,scrollTop - 50);
+                }else{
+                    clearInterval(timer);
+                }
+            }, 10);
+           
+        }
+
 
 
     </script>
