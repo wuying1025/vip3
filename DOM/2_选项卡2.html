@@ -63,18 +63,25 @@
         var aDiv = contentBox.getElementsByTagName('div');
 
         for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i; //a[0].index = 0 aLi[1].index = 1 aLi[2].index = 2
             aLi[i].onclick = function(){
-                // 先将所有li的active移除 ，再给自己添加active
+                // console.log(111)
+                // XXX  console.log( aLi[i],i ); //i = 3 undefined
+                // console.log(this,this.index)//对当前对象的引用
                 for(var j=0; j<aLi.length; j++){
                     aLi[j].className = "";  // 所有li的active去掉
+                    aDiv[j].className = ""; // 所有div的隐藏
                 }
                 // 2.点击的元素添加active
                 this.className = "active";
+                // aDiv中索引跟this.index对应的元素 ->显示
+                aDiv[this.index].className = "c-active";
             }
         }
 
 
 
+        console.log(i); //3
 
 
 
