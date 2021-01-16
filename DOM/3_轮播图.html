@@ -40,6 +40,7 @@
             text-align: center;
             line-height: 20px;
             margin-left:5px;
+            cursor: pointer;
         }
         #btn-box .btn-active{
             background: #ff0036;
@@ -75,6 +76,31 @@
         </ul>
 
     </div>
+
+    <script>
+        var btnBox = document.getElementById('btn-box');
+        var aBtn = btnBox.getElementsByTagName('li'); //存放所有按钮的数组
+        var imgBox = document.getElementById('img-box');
+        var aImg = imgBox.getElementsByTagName('img'); //存放所有图片的数组
+        for(var i=0; i<aBtn.length; i++){
+            aBtn[i].index = i; //给每一个btn按钮添加索引
+            aBtn[i].onclick = function(){
+                // 将所有li的className移除
+                for(var j=0;j<aBtn.length; j++){
+                    aBtn[j].className = "";
+                    aImg[j].className = "";
+                }
+                // 自己添加active
+                this.className = "btn-active";
+                // this.index
+                aImg[this.index].className = "active";
+            }
+        }
+
+        
+        
+
+    </script>
     
 </body>
 </html>
