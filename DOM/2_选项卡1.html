@@ -58,18 +58,27 @@
     </div>
     
     <script>
-        var aLi = document.getElementsByTagName('li');
-
+        var aLi = document.getElementsByTagName('li');//[li]
+        var contentBox = document.getElementById('content-box');
+        // 获取contentBox里边所有的div元素
+        var aDiv = contentBox.getElementsByTagName('div');
+        // 循环取到每一个li 给每一个li绑定事件
         for(var i=0; i<aLi.length; i++){
+            aLi[i].idx = i; //aLi[0].idx = 0; aLi[1].idx = 1; aLi[2].idx = 2;
             aLi[i].onclick = function(){
                 // 先将所有li的active移除 ，再给自己添加active
                 for(var j=0; j<aLi.length; j++){
                     aLi[j].className = "";  // 所有li的active去掉
+                    aDiv[j].className = ""; // 所有div的隐藏
                 }
                 // 2.点击的元素添加active
                 this.className = "active";
+                // aDiv中跟this索引对应的元素 添加c-active
+                aDiv[this.idx].className = "c-active";
             }
         }
+
+
         
 
 
