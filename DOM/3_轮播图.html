@@ -84,7 +84,6 @@
             <li>&lt;</li>
             <li id="next">&gt;</li>
         </ul>
-
     </div>
 
     <script>
@@ -148,6 +147,7 @@
         }
         // 鼠标划出事件 重新开启定时器
         container.onmouseout = function () {
+            // timer不要用var => 会产生局部变量
             timer = setInterval(function () {
                 // 显示下一个 调用下一个按钮的点击事件
                 next.onclick();
