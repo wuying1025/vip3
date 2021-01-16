@@ -72,7 +72,7 @@
         </ul>
         <ul id="arrow-box">
             <li>&lt;</li>
-            <li>&gt;</li>
+            <li id="next">&gt;</li>
         </ul>
 
     </div>
@@ -82,6 +82,8 @@
         var aBtn = btnBox.getElementsByTagName('li'); //存放所有按钮的数组
         var imgBox = document.getElementById('img-box');
         var aImg = imgBox.getElementsByTagName('img'); //存放所有图片的数组
+        var next = document.getElementById('next');
+        var iNow = 0; //记录当前显示的索引
         for(var i=0; i<aBtn.length; i++){
             aBtn[i].index = i; //给每一个btn按钮添加索引
             aBtn[i].onclick = function(){
@@ -96,8 +98,23 @@
                 aImg[this.index].className = "active";
             }
         }
+        // 下一个按钮
+        next.onclick = function(){
+            iNow++;
+            if(iNow == 5){
+                iNow = 0;
+            }
+            for(var j=0; j<aBtn.length; j++){
+                aBtn[j].className = "";
+                aImg[j].className = "";
+            }
+            // 让索引是iNow的按钮变色，让索引是iNow的图片出来
+            aBtn[iNow].className = "btn-active";
+            aImg[iNow].className = "active"
+        }
 
-        
+
+
         
 
     </script>
