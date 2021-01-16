@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #container{
+            width: 750px;
+            height: 291px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #img-box img{
+            display: none;
+        }
+        #img-box .active{
+            display: block;
+        }
+        #btn-box{
+            position: absolute;
+            right:10px;
+            bottom: 10px;
+        }
+        #btn-box li,#arrow-box li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background:rgba(0,0,0,0.5);
+            border-radius: 3px;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            line-height: 20px;
+            margin-left:5px;
+        }
+        #btn-box .btn-active{
+            background: #ff0036;
+        }
+        #arrow-box{
+            position: absolute;
+            left:10px;
+            bottom: 10px;
+        }
+        /* #arrow-box li{
+            float: left;
+            
+
+        } */
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- 图片的容器 -->
+        <div id="img-box">
+            <img class="active" src="img/1.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+            <img src="img/5.jpg" alt="">
+        </div>
+        <ul id="btn-box">
+            <li class="btn-active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul id="arrow-box">
+            <li>&lt;</li>
+            <li>&gt;</li>
+        </ul>
+
+    </div>
+    
+</body>
+</html>
