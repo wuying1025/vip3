@@ -32,7 +32,7 @@
             // 求鼠标距离oDiv的x距离
             var disX = e.clientX - oDiv.offsetLeft ;
             var disY = e.clientY - oDiv.offsetTop;
-            oDiv.onmousemove = function(e){
+            document.onmousemove = function(e){
                 /*e 
                     事件对象 
                     e.clientX 获取鼠标距离浏览器左边的距离
@@ -42,7 +42,10 @@
                 console.log(e.clientX,e.clientY);
                 oDiv.style.left = e.clientX - disX +"px";
                 oDiv.style.top = e.clientY - disY +"px";
-
+            }
+            oDiv.onmouseup = function(){
+                // 鼠标抬起 清楚onmousemove
+                document.onmousemove = null;
             }
         }
 
