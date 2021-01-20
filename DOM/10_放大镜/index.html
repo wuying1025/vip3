@@ -24,6 +24,8 @@
             position: absolute;
             left:0;
             top:0;
+            display: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -40,8 +42,40 @@
     </div>
 
     <script>
-        // 左边 移动的时候drag 跟着鼠标走
+        var smallBox = document.getElementById("small-box");
+        var drag = document.getElementById('drag')
+        smallBox.onmouseover = function(){
+            drag.style.display = "inline";
+        }
 
+        smallBox.onmousemove = function(e){
+
+            var iLeft = e.clientX - drag.offsetWidth/2 ;
+            var iTop = e.clientY - drag.offsetWidth/2;
+            var xMax = smallBox.offsetWidth - drag.offsetWidth;
+            var yMax = smallBox.offsetHeight - drag.offsetHeight;
+            // 判断临界点
+            if(iLeft < 0){
+                iLeft = 0;
+            }
+            if(iTop < 0){
+                iTop = 0;
+            }
+            if(iLeft > xMax){
+                iLeft = xMax;
+            }
+            if(iTop > yMax){
+                iTop = yMax;
+            }
+
+            // 给drag元素定位
+            drag.style.left = iLeft +"px";
+            drag.style.top = iTop +"px";
+        }
+        smallBox.onmouseout = function(){
+            drag.style.display = "none";
+        }
+        
     </script>
 </body>
 </html>
