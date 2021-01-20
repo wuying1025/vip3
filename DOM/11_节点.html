@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">111</div>
+    <!-- 注释 -->
+    <p>11</p>
+    <ul>
+        <li id="li1">11</li>
+    </ul>
+    <script>
+        /*
+            节点类型的12个常量
+            nodeType   元素1 属性 2 文本3  注释8
+            遍历 
+                下一个兄弟 nextSibling | nextElementSibling(ie不支持)
+
+        */ 
+        var oDiv = document.getElementById('div1');
+        // console.log( oDiv.nodeType,oDiv.nodeName );
+        // console.log( oDiv.firstChild.nodeType,oDiv.firstChild.nodeName );
+
+        // console.log(oDiv.nextSibling);  //标准浏览器↵   ie中 <p>11</p>
+        // console.log(oDiv.nextElementSibling);// <p>11</p>
+
+        function next(elem){ //返回下一个元素节点 如果没找到返回null
+            do{
+                elem = elem.nextSibling ;
+            }while( elem && elem.nodeType!= 1) //如果有下一个兄弟 并且 下一个元素不是元素节点循环继续
+            return elem;
+        }
+        console.log( next(oDiv)  )
+        var oLi= document.getElementById('li1');
+        console.log( next(oLi) ); 
+        
+        
+        function prev(){
+            
+        }
+
+
+
+        
+
+
+
+    </script>
+
+    
+</body>
+</html>
