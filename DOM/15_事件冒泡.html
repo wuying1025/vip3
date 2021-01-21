@@ -35,19 +35,19 @@
         var oDiv3 = document.getElementById('div3');
 
 
-        oDiv1.addEventListener('click',function(){
-            console.log('div1捕获')
-        },true)
+        // oDiv1.addEventListener('click',function(){
+        //     console.log('div1捕获')
+        // },true)
 
-        oDiv2.addEventListener('click',function(){
-            console.log('div2捕获')
-        },true)
+        // oDiv2.addEventListener('click',function(){
+        //     console.log('div2捕获')
+        // },true)
 
-        oDiv3.addEventListener('click',function(e){
-            console.log('div3捕获');
-            // 阻止事件冒泡
-            // e.stopPropagation();
-        },true)
+        // oDiv3.addEventListener('click',function(e){
+        //     console.log('div3捕获');
+        //     // 阻止事件冒泡
+        //     // e.stopPropagation();
+        // },true)
 
 
         oDiv1.addEventListener('click',function(){
@@ -60,8 +60,10 @@
 
         oDiv3.addEventListener('click',function(e){
             console.log('div3冒泡');
+            e = e || window.event;
             // 阻止事件冒泡
-            // e.stopPropagation();
+            e.stopPropagation(); //标准浏览器阻止事件冒泡
+            e.cancelBubble = true;//ie浏览器阻止事件冒泡
         },false)
 
        
@@ -70,7 +72,7 @@
         // 事件捕获 ，点击子元素 触发父元素事件，先触发父元素再出发子元素（顺序从外到里）
         // 执行顺序 既有捕获又有冒泡 先从外到里捕获，再从里向外冒泡
 
-        
+
 
 
 
