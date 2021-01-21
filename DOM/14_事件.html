@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>1111</div>
+    <div id="div2">222</div>
+
+    <script>
+        // 事件 事件源 事件处理函数 
+
+        /*
+        绑定事件的方式 
+            1. <div onclick="">1111</div>
+
+            2. oDiv2.onclick = function(){
+                console.log('22')
+            }
+            3. oDiv2.addEventListener('click',function(){
+                    console.log('div222')
+                },false);
+            可以重复绑相同事件
+        */ 
+       var oDiv2 = document.getElementById('div2');
+
+    //    oDiv2.onclick = function(){
+    //        console.log('22');
+    //    }
+
+    //    oDiv2.onclick = function(){
+    //        console.log('200');
+    //    }
+      //  addEventListener添加事件监听（事件名,回调函数,false冒泡|true捕获）
+       oDiv2.addEventListener('click',function(){
+           console.log('div22')
+       },false);
+       oDiv2.addEventListener('click',function(){
+           console.log('div200')
+       },false);
+
+       
+
+
+
+       
+
+
+
+    </script>
+    
+</body>
+</html>
