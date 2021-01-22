@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        // 获取屏幕宽度
+        var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        function Leaf() {
+            // 叶子的宽100 -150像素
+            this.width = Math.random() * 50 + 100;
+            // 叶子位置 0 - (屏幕宽度-叶子宽度)
+            this.left = Math.random() * (screenWidth - this.width);
+            // 叶子形状 1 2 3 4  0-1 0-4 0-3+1
+            this.shape = Math.floor(Math.random() * 4) + 1;
+        }
+        // 生成叶子到页面中
+        Leaf.prototype.init = function () {
+            // this ->leaf1
+            // 1创建图片 2插入页面中
+            // var oImg = document.createElement('img');
+            // 1创建图片
+            var oImg = new Image();
+            oImg.src = "img/" + this.shape + ".png";
+            oImg.style.width = this.width + "px";
+            oImg.style.top = 0;
+            oImg.style.left = this.left + "px";
+            // 2插入页面中
+            document.body.appendChild(oImg);
+        }
+
+        for (var i = 0; i < 10; i++) {
+            var leaf = new Leaf();
+            leaf.init();
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
