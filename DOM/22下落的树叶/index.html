@@ -32,7 +32,7 @@
             // 叶子形状 1 2 3 4  0-1 0-4 0-3+1
             this.shape = Math.floor(Math.random() * 4) + 1;
             // 叶子的dom元素（图片）
-            this.img = ""; 
+            this.img = "";
         }
         // 生成叶子到页面中
         Leaf.prototype.init = function () {
@@ -51,14 +51,19 @@
         }
         Leaf.prototype.fall = function () {
             var that = this; //叶子对象
-            that.timer  = setInterval(function () { //在定时器中this 指向window
-                console.log(that)  //因为this指向window 所以我们用that中存的this
-                if (that.img.offsetTop >= screenHeight- that.img.offsetHeight ) {//叶子到底了  不下落
-                    clearInterval(that.timer);
-                } else {
-                    that.img.style.top = that.img.offsetTop + 5 + "px";
-                }
-            }, 10)
+            setTimeout(function () { //延迟 只执行一次 500ms后执行
+                that.timer = setInterval(function () { //在定时器中this 指向window
+                    console.log(that)  //因为this指向window 所以我们用that中存的this
+                    if (that.img.offsetTop >= screenHeight - that.img.offsetHeight) {//叶子到底了  不下落
+                        clearInterval(that.timer);
+                    } else {
+                        /*  .style.top只能取到内联样式的值 赋值
+                            offsetTop取值 不能赋值 */
+                        that.img.style.top = that.img.offsetTop + 5 + "px";
+                    }
+                }, Math.random()*20);
+
+            }, Math.random()*500);
         }
 
         var leafArr = [];
