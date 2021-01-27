@@ -116,6 +116,10 @@
         var spaceY = (screenHeight - 4*liHeight)/5;
          // 计算水平方向空隙的值
         var spaceX = (screenWidth -6*liWidth)/7;
+        // 合并后左边和上边的空隙值
+        var spaceLeft = (screenWidth - 6*127)/2;
+        var spaceTop = (screenHeight - 4*127)/2;
+
         for(var i=0; i<aLi.length; i++){
             //根据索引推断所在行 Math.floor(i/6)+1
             // 0-5    1 
@@ -149,9 +153,24 @@
             aLi[i].style.top = row * spaceY + (row-1)*liHeight +"px";
             aLi[i].style.left = col * spaceX + (col-1)*liWidth +"px";
             aLi[i].style.transform = "rotate("+(Math.random()*40-20)+"deg)";
+            aLi[i].onclick = fn;
+
+        }
+        function fn(){
+            // 将所有li合并
+            for(var i=0; i<aLi.length; i++){
+                // 将所有li的延迟时间去掉
+                aLi[i].style.transitionDelay = "0ms";
+                // 合并 
+                // 修改元素的边框为1px
+                aLi[i].style.borderWidth = "1px";
+                aLi[i].style.left = spaceLeft + (aLi[i].col-1)*127 +"px";
+                aLi[i].style.top = spaceTop + (aLi[i].row -1)*127 +"px";
+                aLi[i].style.transform = "rotate(0deg)";
+            }
         }
 
-        // 点击li的时候  位置合并
+
         
     </script>
     
