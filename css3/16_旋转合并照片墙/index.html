@@ -40,10 +40,26 @@
             /* background: url(img/1.jpg) 0 0 no-repeat; */
             opacity: 0;
         }
+        #next{
+            width: 40px;
+            height: 80px;
+            background: #fff url(img/next.png) center center no-repeat;
+            position: absolute;
+            right:0;
+            top:50%;
+            /* 挪元素高度的一半 */
+            /* 已知高度 */
+            /* margin-top:-40px; */
+            /* 未知高度 translateY负元素高度的一半 */
+            transform:translateY(-50%);
+            border-radius: 5px 0 0 5px;
+            display: none;
+        }
     </style>
 </head>
 
 <body>
+    
     <ul>
         <li>
             <img src="img/thumbs/1.jpg" alt="">
@@ -142,11 +158,14 @@
             <span></span>
         </li>
     </ul>
+    <div id="next">
+    </div>
 
     <script>
 
         // 1获取到所有li
         var aLi = document.getElementsByTagName('li');
+        var nextBtn = document.getElementById('next');
         var liHeight = aLi[0].offsetHeight;
         var liWidth = aLi[0].offsetWidth;
         // 获取屏幕高度和宽度
@@ -161,6 +180,8 @@
         var spaceTop = (screenHeight - 4 * 127) / 2;
         // 记录打开ture|合并false的状态 
         var flag = true;
+        // 记录当前显示图片的索引
+        var iNow = 0;
         for (var i = 0; i < aLi.length; i++) {
             //根据索引推断所在行 Math.floor(i/6)+1
             // 0-5    1 
@@ -221,6 +242,11 @@
                     oSpan.style.background = "url(img/" + num + ".jpg) " + left + "px " + top + "px no-repeat";
                     // oSpan.style.background = "url(img/"+(this.index+1)+".jpg) "+(-(col-1)*125)+"px "+(-(row-1)*125)+"px no-repeat";
                 }
+                // 讲按钮显示
+                nextBtn.style.display = "block";
+                // 将当前显示图片的索引存在iNow
+                iNow = this.index;
+                console.log(iNow)
             } else {
                 // 散开
                 for (var i = 0; i < aLi.length; i++) {
@@ -232,11 +258,24 @@
                     var oSpan = aLi[i].getElementsByTagName('span')[0];
                     oSpan.style.opacity = "0";
                 }
+                nextBtn.style.display = "none";
             }
             flag = !flag;
         }
 
-
+        // 按钮绑定点击事件
+        nextBtn.onclick = function(){
+            iNow++; //iNow记录索引 0-
+            if(iNow == aLi.length){
+                iNow = 0;
+            }
+            // console.log(iNow)
+            for(var i=0; i<aLi.length; i++){
+                var oSpan = aLi[i].getElementsByTagName('span')[0];
+                oSpan.style.transitionDelay = Math.random()*500 +"ms";
+                oSpan.style.backgroundImage ="url(img/"+(iNow+1)+".jpg)";
+            }
+        }
 
     </script>
 
