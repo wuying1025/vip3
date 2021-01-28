@@ -18,16 +18,13 @@
             line-height: 100px;
             margin:20px auto;
         }
-        .img-box img{
-            display: none;
-            width:100%;
-        }
-        .img-box .big-img{
-            display: block;
-        }
+        
         .img-box{
             width: 960px;
             margin:0 auto;
+            height: 540px;
+            background: url(img/01.jpg) ;
+            background-size: 100%;
         }
         .text-box{
             width:960px;
@@ -50,14 +47,14 @@
             h3{
                 width:100%;
             }
-            .img-box .big-img{
-                display: none;
-            }
-            .img-box .middle-img{
-                display: block;
-            }
+            /* 图片的宽高比  540/960 = 56% */
             .img-box{
+                /* 相对于父元素的100% */
                 width:100%;
+                background-image: url(img/01_s_2x.jpg);
+                /* 相对于父元素的56% */
+                padding-top:56%;
+                height: 0px;
             }
 
             .text-box{
@@ -72,15 +69,13 @@
             }
         }
         @media screen and (max-width:480px){
-            .img-box .middle-img{
-                display: none;
-            }
-            .img-box .small-img{
-                display: block;
-            }
             .text-box .left, .text-box .right{
                 width:100%;
                 float: none;
+            }
+            .img-box{
+                background-image: url(img/01_s.jpg);
+                
             }
         }
 
@@ -91,9 +86,7 @@
     <h3>页头</h3>
     <h3>标题</h3>
     <div class="img-box">
-        <img class="big-img" src="img/01.jpg" alt="">
-        <img class="middle-img" src="img/01_s_2x.jpg" alt="">
-        <img class="small-img" src="img/01_s.jpg" alt="">
+        
     </div>
     <div class="text-box">
         <div class="left"></div>
