@@ -1,3 +1,6 @@
+body{
+    background: #f0efed;
+}
 .header{
     display: flex;
     background: #FFBD00;
@@ -84,6 +87,7 @@
 .list-box{
     display: flex;
     flex-wrap:wrap;
+    background: #fff;
 }
 .list-box .list{
     height: 162px;
@@ -105,4 +109,22 @@
 }
 .list p{
     text-align: center;
+}
+.pro-list-box{
+    margin-top:.3rem;
+    padding-left:.2rem;
+    background: #fff;
+}
+.pro-list{
+    display: flex;
+    padding: 0.2rem 0;
+    border-top:1px solid #DDD8CE;
+}
+.pro-list img{
+    width: 1.8rem;
+    height: 1.64rem;
+}
+
+.pro-list-info{
+    flex:1;
 }
