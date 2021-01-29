@@ -1,0 +1,24 @@
+.header{
+    display: flex;
+    background: #FFBD00;
+
+    /* css3前缀 */
+    /* 
+    -webkit-border-radius: 5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-raduis:5px;
+    border-radius: 5px; 
+    */
+}
+.header .city{
+    width:180px;
+    height:101px;
+}
+.header .mine{
+    width:94px;
+    height:101px;
+}
+.header .search-box{
+    flex:1;
+}
