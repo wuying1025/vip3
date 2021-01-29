@@ -81,3 +81,28 @@
     font-weight: 300;
     color:#fff;
 }
+.list-box{
+    display: flex;
+    flex-wrap:wrap;
+}
+.list-box .list{
+    height: 162px;
+    width:20%;
+}
+.list .iconfont{
+    font-size: 0.4rem;
+    color: #fff;
+    display: block;
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height:.8rem;
+    margin:0 auto;
+}
+.list .icon-canju{
+    background: #fd9d21;
+}
+.list p{
+    text-align: center;
+}
