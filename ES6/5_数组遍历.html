@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [1, 2, 3, 4, 5];
+
+        // for
+        // for(let i = 0; i < arr.length; i++){
+        //     if(i === 2){
+        //         break;
+        //     }
+        //     console.log(arr[i]);
+        // }
+
+        // forEach
+        // const res = arr.forEach(function(elem){
+        //     console.log(elem);
+        //     return elem;
+        // });
+        // console.log(res);
+
+        // map
+        // const res = arr.map(function(elem, index, array){
+        //     // console.log(elem, index, array);
+        //     if(elem > 2){
+        //         return elem;
+        //     }
+
+        // });
+        // console.log(res);
+
+
+        // filter
+        // const res = arr.filter(function(elem, index, array){
+        //     // console.log(elem, index, array);
+        //     if(elem > 2){
+        //         return elem;
+        //     }
+        // });
+        // console.log(res);
+
+        // some
+        // const res = arr.some(function(elem, index, array){
+        //     // console.log(elem, index, array);
+        //     if(elem > 6){
+        //         return elem;
+        //     }
+        // });
+        // console.log(res);
+
+        // every
+        // const res = arr.every(function(elem, index, array){
+        //     // console.log(elem, index, array);
+        //     if(elem > 0){
+        //         return elem;
+        //     }
+        // });
+        // console.log(res);
+
+        // reduce
+
+        // let sum = 0;
+        // arr.forEach(function(elem){
+        //     sum += elem;
+        // });
+        // console.log(sum);
+
+        // const res = arr.reduce(function (prev, cur, index, array) {
+        //     console.log(prev, cur);
+        //     return prev += cur;
+        // }, 0);
+        // console.log(res);
+
+        // for in ???
+        // Array.prototype.xxx = function(){
+        //     console.log('xxxx');
+        // };
+        // arr.push(123);
+        // console.log(arr);
+        // arr.xxx();
+
+        // for(let index in arr){
+        //     console.log(index, arr[index]);
+        // }
+
+        const obj = {
+            name: 'xc',
+            age: 35
+        };
+        // console.log('obj');
+        for(let prop in obj){
+            console.log(prop, typeof prop);
+            console.log(obj[prop]);
+        }
+        // console.log(obj.age);
+        // console.log(obj[age]);
+        console.log( arr instanceof Array);
+
+
+    </script>
+</body>
+
+</html>
