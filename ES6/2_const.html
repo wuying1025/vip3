@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var a = 5;
+        // a = 6;
+        // console.log(a);
+
+        // ES5
+        // Object.defineProperty(window, 'PI', {
+        //     value: 3.1415926,
+        //     writable: false
+        // });
+        // PI = 666;
+        // console.log(PI);
+
+        // var MAX = 999;
+
+
+        // ES6  const
+        // const a = 5;
+        // a = 6;
+        // console.log(a);
+
+        // 错误：
+        // const a;
+        // a = 5;
+        // console.log(a);
+
+        // console.log(aa);
+        // const aa = 555;
+
+
+        const xc = {
+            name: 'xiecheng',
+            age: 35,
+            child: {
+                name: 'taozi',
+                age: 5
+            }
+        };
+        Object.freeze(xc); // 冻结
+        Object.freeze(xc.child);
+        xc.child.age = 6;
+        console.log(xc);
+
+
+        const arr = [1, 2, 3];
+        arr[0] = 666
+        console.log(arr)
+    </script>
+</body>
+
+</html>
