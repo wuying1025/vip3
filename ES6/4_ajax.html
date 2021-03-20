@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+    </ul>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+
+    <script>
+        const oList = document.getElementById('list');
+        axios.get('http://jsonplaceholder.typicode.com/users')
+            .then(function ({ data }) {
+                console.log(data);
+                let innerHTMLStr = '';
+                for (let i = 0, len = data.length; i < len; i++) {
+                    innerHTMLStr += '<li>' + data[i].name + '</li>';
+                }
+                oList.innerHTML = innerHTMLStr;
+            });
+    </script>
+</body>
+
+</html>
