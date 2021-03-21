@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">按钮</button>
+    <script>
+        /*  foo();
+        function foo(){
+            console.log(123);
+        } */
+
+
+        // const foo = a => console.log(a);
+        // foo(1);
+
+
+        // const x = x => x;
+
+        // const oBtn = document.querySelector('#btn');
+        // oBtn.addEventListener('click',  () => {
+        //     setTimeout( () => {
+        //         console.log(this);
+        //     }, 1000);
+        // });
+
+        // 错误：
+        // const Person = (name, age) => {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // const p1 = new Person('xc', 35);
+        // console.log(p1);
+
+        const foo = () => {
+            console.log(arguments);
+        }
+        foo();
+    </script>
+</body>
+
+</html>

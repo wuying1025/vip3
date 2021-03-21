@@ -89,7 +89,9 @@
 
         // NodeList 伪数组 / 类数组
         // const elems3 = document.querySelectorAll('#parent .elem')
-        // console.log(elems3);
+        // const arr3 = Array.from(elems3)
+        // arr3.push(123);
+        // console.log(arr3);
 
         // const oParent = document.querySelector('#parent .elem');
         // console.log(oParent);
@@ -139,9 +141,31 @@
          });
          console.log(sortList); */
 
-        const arr = [7, 6, 5, 4, 3, 2]
-        arr.splice(3, 0, 8, 9, 10);
-        console.log(arr);
+        // const arr = [7, 6, 5, 4, 3, 2]
+        // arr.splice(3, 0, 8, 9, 10);
+        // console.log(arr);
+
+        // function foo(a, b, c){
+        //     console.log(arguments);
+        //     // console.log(arguments[0]);
+        //     // console.log(arguments[1]);
+        //     // console.log(arguments[2]);
+        // }
+        // foo(11, 22, 33);
+
+
+        // const arr4 = Array.of(3, 'es6', true, [1,2,3], {age: 11});
+        // arr4.fill('xxx', 2, 4);
+        // console.log(arr4);
+
+        const str = 'LoveCoding';
+        console.log(str.indexOf('Code')); // -1
+        console.log(str.includes('Code'));
+
+        const arr4 = Array.of(3, 'es6', true, [1, 2, 3], {
+            age: 11
+        });
+        console.log(arr4.includes('es678'));
     </script>
 </body>
 
