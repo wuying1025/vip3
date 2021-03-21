@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES5
+        function Animal(age, color) {
+            this.age = age;
+            this.color = color;
+        }
+        // 实例方法
+        Animal.prototype.showAge = function () {
+            console.log('我的年龄是：' + this.age);
+        };
+        // 静态方法
+        Animal.run = function(){
+            console.log('我是动物，我会跑');
+        };
+
+        const dog = new Animal(2, 'black');
+        console.log(dog);
+        dog.showAge();
+        Animal.run();
+
+
+        // const arr = new Array(1, 2); // [1, 2]
+        // arr.push(3);
+        // console.log(arr);
+
+        // const random = Math.random(); // 静态方法
+        // console.log(random);
+
+
+        // ES5继承
+        function Cat(name, age, color){
+            Animal.call(this, age, color); // 继承父类的属性
+            this.name = name;
+        }
+
+        // 继承父类的方法
+        Cat.prototype = new Animal();
+        Cat.prototype.constructor = Cat;
+
+        const c1 = new Cat('小花', 2, 'white');
+        console.log(c1);
+        c1.showAge();
+    </script>
+</body>
+
+</html>
