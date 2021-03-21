@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .elem {
+            background: #f00;
+        } */
+        /* 属性选择器 */
+        a[href="http://www.baidu.com"] {
+            background: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://www.baidu.com">123</a>
+    <a href="http://www.baidu.com">456</a>
+    <a href="http://www.baidu.com">789</a>
+    <div id="parent">
+        <div class="elem">1</div>
+        <div class="elem">2</div>
+        <div class="elem">3</div>
+    </div>
+
+    <div id="aa">
+        <div class="elem"><a href="http://www.baidu.com"></a></div>
+        <div class="elem"><a href="http://www.baidu.com"></a></div>
+        <div class="elem"><a href="http://www.baidu.com"></a></div>
+        <div class="elem"><a href="http://www.baidu.com"></a></div>
+    </div>
+
+
+
+    <script>
+        // const arr = ['es6', 1, 2, 3, 4, 5, 3];
+        // for(let i =  0; i< arr.length; i++){
+        //     if(arr[i] === 3){
+        //         console.log('有3');
+        //         break;
+        //     }
+        // }
+
+        // find
+        // const res = arr.find(function(elem, index, array){
+        //     // console.log(elem, index, array);
+        //     return elem === 3;
+        // });
+        // console.log(res);
+
+        // findIndex
+        // const res = arr.findIndex(function(elem, index, array){
+        //     // console.log(elem, index, array);
+        //     return elem === 3;
+        // });
+        // console.log(res);
+
+
+        // for of 循环遍历数组
+        // for(let elem of arr){
+        //     console.log(elem);
+        // }
+
+        // for(let index of arr.keys()){
+        //     console.log(index);
+        // }
+
+        // for(let elem of arr.values()){
+        //     console.log(elem);
+        // }
+
+        // for(let [index, elem] of arr.entries()){
+        //     console.log(index, elem);
+        // }
+
+        // HTMLCollection 伪数组 / 类数组
+        // const aElems = document.getElementsByTagName('div');
+        // aElems.push(123);
+        // console.log(aElems instanceof Array);
+        // console.log(arr);
+
+        // HTMLCollection
+        // const elems2 = document.getElementsByClassName('elem');
+        // console.log(elems2);
+
+        // NodeList 伪数组 / 类数组
+        // const elems3 = document.querySelectorAll('#parent .elem')
+        // console.log(elems3);
+
+        // const oParent = document.querySelector('#parent .elem');
+        // console.log(oParent);
+
+        // const arr = ['es6', 'lovecoding', 'fe', 1, 2, 3];
+        // console.log(arr.join(','));
+        // arr.push('123');
+        // arr.pop();
+        // console.log(arr.reverse());
+
+        // 翻转字符串
+        // const str = 'LoveCoding';
+        // const a = str.split('').reverse().join('')
+        // console.log(a);
+
+        // console.log(arr.slice(2, 4));
+
+        // const arr2 = [8, 2, 1, 4, 6, 5, 11];
+        // // console.log(arr2.sort());
+        // const res = arr2.sort(function(a, b){
+        //     console.log(a, b);
+        //     return b - a;
+        // });
+        // console.log(res);
+
+
+        /*  const userList = [{
+             id: 1,
+             name: 'zhangsan',
+             age: 18
+         }, {
+             id: 2,
+             name: 'lisi',
+             age: 20
+         }, {
+             id: 3,
+             name: 'xxx',
+             age: 10
+         }, {
+             id: 4,
+             name: 'yy',
+             age: 30
+         }];
+
+         const sortList = userList.sort(function(a, b){
+             return a.age - b.age
+         });
+         console.log(sortList); */
+
+        const arr = [7, 6, 5, 4, 3, 2]
+        arr.splice(3, 0, 8, 9, 10);
+        console.log(arr);
+    </script>
+</body>
+
+</html>
