@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* const name = 'xc';
+        const age = 35;
+
+        const obj = {
+            name,
+            age,
+            showName(){
+                console.log(this.name);
+            }
+        };
+        console.log(obj);
+        obj.showName() */
+
+        /* const n = 'name';
+        const obj = {
+            [n]: 'xc'
+        };
+        console.log(obj); */
+
+        // Object.is()
+
+        // const obj1 = {
+        //     name: 'xc',
+        //     age: 35
+        // };
+        // const obj2 = {
+        //     name: 'xc',
+        //     age: 35
+        // };
+        // const obj2 = obj1;
+
+        // console.log( Object.is(obj1, obj2));
+
+        // console.log( Object.is(+0, -0));
+
+        // NaN: not a number
+        // console.log( Object.is(NaN, NaN));
+
+        // console.log(NaN == NaN);
+
+        // Object.assign()
+        /* const obj1 = {
+            name: 'xc',
+            age: 35
+        };
+        const obj2 = {
+            height: 183,
+            age: 18
+        }; */
+        // const obj3 = {
+        //     ...obj1,
+        //     ...obj2
+        // };
+        // console.log(obj3);
+        // Object.assign(obj1, obj2);
+        // console.log(obj1);
+
+        /* const obj1 = {
+            a: {
+                b: {
+                    c: 1,
+                    d: 2
+                },
+                e: 3,
+                f: 5,
+                g: 6
+            }
+        };
+        const obj2 = {
+            a: {
+                b: {
+                    c: 1,
+                    d: 2
+                },
+                e: 3,
+                f: 4
+            }
+        };
+
+        Object.assign(obj1, obj2);
+        console.log(obj1); */
+
+        const obj1 = {
+            name: 'xc',
+            age1: 35
+        };
+        // console.log('age' in obj1);
+
+        // const arr = [1, 2, 3, 4];
+        // console.log(8 in arr);
+        // for(let prop in obj1){
+        //     console.log(prop, obj1[prop]);
+        // }
+        Object.keys(obj1).forEach(prop => console.log(prop, obj1[prop]));
+    </script>
+</body>
+
+</html>

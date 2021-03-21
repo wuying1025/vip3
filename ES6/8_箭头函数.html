@@ -39,10 +39,20 @@
         // const p1 = new Person('xc', 35);
         // console.log(p1);
 
-        const foo = () => {
+        /* const foo = () => {
             console.log(arguments);
         }
-        foo();
+        foo(); */
+
+        const obj = {
+            name: 'xc',
+            age: 35,
+            showName: () => {
+                console.log('我的名字是:' + this.age);
+            }
+        };
+        obj.showName();
+
     </script>
 </body>
 
