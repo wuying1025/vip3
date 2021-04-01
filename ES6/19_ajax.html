@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第一步创建xmlhttprequest对象
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        // 第二步发送请求
+        // xmlhttp.open("GET", "http://47.92.82.13:4000/showMessage", true);
+        xmlhttp.open("GET", "./data/data.json", true);
+        xmlhttp.send();
+        // 第三回调处理
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                console.log(JSON.parse(xmlhttp.responseText));
+            }
+        }
+
+        // window.onload = function(){
+
+        // }
+
+        // let obj = {
+        //     a:"abc"
+        // }
+        // // console.log(obj);
+        // let str = JSON.stringify(obj);
+        // console.log(str);
+        // console.log(JSON.parse(str));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // setTimeout(function(){
+        //     setTimeout(function(){
+
+        //     },1000)
+        // },1000)
+
+        // new Promise(function(resolve,reject){
+        //     setTimeout(function(){
+        //         console.log("1");
+        //         reject();
+        //     },1000)
+        // }).then(function(){
+        //     setTimeout(function(){
+        //         console.log("2");
+        //     },1000)
+        // }).catch(function(){
+        //     console.log("erro");
+        // })
+
+        // new Promise(function (resolve, reject) {
+        //     setTimeout(function () {
+        //         console.log(1);
+        //         resolve();
+        //     }, 1000)
+        // }).then(function () {
+        //     return new Promise(function (resolve, reject) {
+        //         setTimeout(function () {
+        //             console.log(2);
+        //             resolve()
+        //         },1000)
+        //     })
+        // }).then(function(){
+        //     setTimeout(function(){
+        //         console.log(3);
+        //     },1000)
+        // })
+        
+        function proFun(val){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    console.log(val);
+                    resolve()
+                },1000)
+            })
+        }
+
+        proFun(1).then(function(){
+            return proFun(2)
+        }).then(function(){
+            return proFun(3)
+        }).then(function(){
+            return proFun(4)
+        })
+
+
+    </script>
+</body>
+
+</html>
