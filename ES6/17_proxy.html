@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let obj = {
+        //     a:1,
+        //     b:2,
+        //     c:3
+        // }
+
+        // let p = new Proxy(obj,{
+        //     get:function(target, propKey, receiver){
+        //         console.log(target, propKey, receiver);
+        //         return target[propKey]
+        //     },
+        //     set:function(target, propKey, receiver){
+        //         console.log(target, propKey, receiver);
+        //         target[propKey] = 2
+        //     },
+        //     has:function(target,key){
+        //         // console.log(target,key);
+        //         if(target[key]){
+        //             return true
+        //         }else{
+        //             return false
+        //         }
+        //     },
+        //     deleteProperty:function(target,key){
+        //         console.log(target,key);
+        //         delete target[key];
+        //     }
+        // })
+        // console.log(p.a);
+        // p.a = 2;
+        // console.log(p.a);
+        // console.log('a' in p);
+
+        // delete p.c
+
+
+        let foo = function(a,b,c){
+            console.log(a,b,c);
+        }
+
+        let p = new Proxy(foo,{
+            apply:function(target, ctx, args){
+                console.log(target, ctx, args);
+                // console.log("com");
+                target(...args)
+            }
+        })
+        p(1,2,3)
+
+
+        // let obj = {
+        //     a:1,
+        //     b:2
+        // }
+        // console.log( 'b' in obj );
+    </script>
+</body>
+</html>
