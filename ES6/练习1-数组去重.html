@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,6,1,2,3,1];
+
+        // 方法一
+        // let newArr = [];
+        // for(let i=0;i<arr.length;i++){
+        //     for(let j=i+1;j<arr.length;j++){
+        //         if(arr[i] == arr[j]){
+        //             arr.splice(j,1);
+        //             j--;
+        //         }
+        //     }
+        // }
+        // console.log(arr);
+        // 方法二 (获取重复次数)
+        let obj = {};
+        for(var i=0;i<arr.length;i++){
+            if(obj[arr[i]]){
+                obj[arr[i]]++;
+            }else{
+                obj[arr[i]] = 1;
+            }
+            // obj[arr[i]] = 0;
+        }
+        console.log(obj);
+
+
+        // let obj = {}
+        // console.log(obj.b);
+        // obj.a = 10;
+        // obj.a = 20;
+        // console.log(obj);
+
+    </script>
+</body>
+</html>

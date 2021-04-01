@@ -7,12 +7,35 @@
 </head>
 <body>
     <script>
-        let arr = [1,2,3,4,5,6,7,1,2,3];
-        // console.log(arr);
-        let setOne = new Set(arr);
-        // console.log(setOne);
+        let arr = [9,2,3,4,5,6,7,1,2,3];
+        // // console.log(arr);
+        // let setOne = new Set(arr);
+        // // console.log(setOne);
 
-        console.log(Array.from(new Set(arr)));
+        // console.log(Array.from(new Set(arr)));
+
+        // let seta = new Set(arr);
+        // seta.add("hello");
+        // seta.add(123);
+        // // seta.delete(123)
+        // seta.clear();
+        // console.log(seta.has("hello"));
+        // console.log(seta);
+        // for(let item of seta.entries()){
+        //     console.log(item);
+        // }
+
+        var wSet = new WeakSet();
+        let obj = {a:1}
+        wSet.add(obj);
+        wSet.add(obj);
+        console.log(wSet);
+        // if({a:1} == {a:1}){
+        //     console.log(true);
+        // }else{
+        //     console.log(false);
+        // }
+        
     </script>
 </body>
 </html>
