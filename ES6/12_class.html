@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            showInfo(){
+                console.log(this.name,this.age);
+            }
+        }
+        // let student = new Person("小明",18);
+        // console.log(student.age);
+        // student.showInfo();
+
+        class Teacher extends Person{
+            constructor(name,age,school){
+                super(name,age)
+                this.school = school;
+            }
+            showSchool(){
+                console.log(this.school);
+            }
+        }
+
+        let teacher1 = new Teacher('小李',30,'黑大')
+        teacher1.showInfo();
+        teacher1.showSchool();
+    </script>
+</body>
+</html>
