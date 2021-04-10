@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //习题一 var str1 = 123000 //321
+
+        // let str1 = 123000;
+        // console.log( Number.parseInt(str1.toString().split("").reverse().join("")) );
+
+        //习题二
+        /*
+         *   console.log(sum(2,3))//5
+         *   console.log(sum(2)(3))//5
+         */
+
+        function sum() {
+            var a = arguments[0]
+            if (arguments.length == 2) {
+                return a + arguments[1]
+            } else {
+                return function () {
+                    return a + arguments[0]
+                }
+            }
+
+        }
+        //  console.log(sum(2,3));
+        // console.log(sum(2)(3));
+
+
+        //习题三
+        /*
+         *   const repeatfunc = repeat(console.log,5,500);
+         *   repeatfunc('hello,wrold');
+         *   每隔500毫秒输出一个hello,world 输出5次
+         */
+
+        function repeat(fun, count, timer) {
+            var funCount = 0;
+            return function (str) {
+                var funTimer = setInterval(function () {
+                    if (funCount == count) {
+                        clearInterval(funTimer)
+                    } else {
+                        fun(str);
+                        funCount++;
+                    }
+                }, timer);
+            }
+        }
+        const repeatfunc = repeat(console.log, 6, 500);
+        repeatfunc("hello world");
+
+    </script>
+</body>
+
+</html>
