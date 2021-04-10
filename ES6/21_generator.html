@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function* foo(){
+        //     console.log("1");
+        //     yield console.log("2");
+        //     yield console.log("3");
+
+        // }
+
+        // let g = foo();
+        // console.log(g.next());
+        // console.log(g.next());
+        // console.log(g.next());
+
+        function* foo(x) {
+            var y = 2 * (yield (x + 1));
+            console.log(y);
+            var z = yield (y / 3);
+            return (x + y + z);
+        }
+        var a = foo(5);
+        console.log(a.next());
+        console.log(a.next(2));
+        console.log(a.next(1));
+
+    </script>
+</body>
+
+</html>

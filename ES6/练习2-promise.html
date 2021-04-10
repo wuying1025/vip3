@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script src="./js/ajax.js"></script>
+    <script>
+        let p1 = new Promise(function(resolve,reject){
+            ajaxGet("./data/data1.json",function(res){
+                // console.log(res);
+                resolve(res.data)
+            })
+        })
+        let p2 = new Promise(function(resolve,reject){
+            ajaxGet("./data/data2.json",function(res){
+                // console.log(res);
+                resolve(res.data);
+            })
+        }) 
+
+        Promise.all([p1,p2]).then(function(res){
+            console.log(res)
+            let str = `<ul>`
+            for(var i = 0;i<res[0].length;i++){
+                // console.log(res[0][i].jrid);
+                for(var j=0;j<res[1].length;j++){
+                    if(res[0][i].jrid == res[1][j].jrid){
+                        str += `<li>姓名：${res[1][j].userName}---级别：${res[0][i].levelname}</li>`
+                    }
+                }
+            }
+            str += `</ul>`
+            document.getElementById("box").innerHTML = str
+        })
+
+    </script>
+</body>
+</html>
