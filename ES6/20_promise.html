@@ -46,21 +46,70 @@
         //     },1000)
         // })
         
-        function proFun(val){
-            return new Promise(function(resolve,reject){
-                setTimeout(function(){
-                    console.log(val);
-                    resolve()
-                },1000)
-            })
-        }
+        // function proFun(val){
+        //     return new Promise(function(resolve,reject){
+        //         setTimeout(function(){
+        //             console.log(val);
+        //             resolve()
+        //         },1000)
+        //     })
+        // }
 
-        proFun(1).then(function(){
-            return proFun(2)
-        }).then(function(){
-            return proFun(3)
-        }).then(function(){
-            return proFun(4)
+        // proFun(1).then(function(){
+        //     return proFun(2)
+        // }).then(function(){
+        //     return proFun(3)
+        // }).then(function(){
+        //     return proFun(4)
+        // })
+
+        // setTimeout(function(){
+        //     ...
+        //     console.log(1);
+        //     setTimeout(function(){
+        //         console.log(2);
+        //         ....
+        //         setTimeout(f)
+        //     },2000)
+        // },1000)
+        
+        let p1 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log(1);
+                resolve("头像")
+                // reject("error")
+            },1000)
+        })
+        let p2 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log(2);
+                // resolve("用户名")
+                reject("error")
+
+            },2000)
+        })
+        let p3 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log(3);
+                resolve("用户信息")
+            },3000)
+        })
+
+        
+
+
+       
+        let arr = [p1,p2,p3];
+        // Promise.all(arr).then(function(res){
+        //     // console.log("成功")
+        //     console.log(res);
+        // }).catch(function(){
+        //     console.log("error");
+        // })
+        Promise.race(arr).then(function(res){
+            console.log(res);
+        }).catch(function(){
+            console.log("error");
         })
 
 
