@@ -1,0 +1,44 @@
+@import 'common.scss';
+$color:red;
+$w:100px;
+$h:height;
+$icon:success;
+// sass 
+/* sass1 */ 
+
+body{
+    background: $color;
+    .div1{
+        width:$w;
+        height:200px;
+        background: #000;
+        border:{
+            left:10px solid #0f0;
+            top:20px solid #0f0;
+        }
+    }
+    p{
+        width: 200px;
+        #{$h}: 200px;
+        background: url(#{$icon}.jpg);
+    }
+    a{
+        color: #00f;
+        &:hover{
+            color: #0f0;
+        }
+    }
+    .aa{
+        @include name(100px,100px,#00f);
+    }
+    .bb{
+        @include name;
+    }
+    .div2{
+        @extend .aa;
+        background: #000;
+    }
+  
+}
+
+
