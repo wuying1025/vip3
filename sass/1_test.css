@@ -12,7 +12,7 @@ body .div1 {
 }
 
 body p {
-  width: 200px;
+  width: 300px;
   height: 200px;
   background: url(success.jpg);
 }
@@ -38,5 +38,47 @@ body .bb {
 }
 
 body .div2 {
-  background: #000;
+  background: #ff6666;
+  width: 234px;
+  height: 200px;
+  border: 1px solid #000;
+}
+
+body .item-1 {
+  width: 20px;
+}
+
+body .item-2 {
+  width: 40px;
+}
+
+body .error-icon {
+  background-image: url("/images/error.png");
+}
+
+body .success-icon {
+  background-image: url("/images/success.png");
+}
+
+body .warn-icon {
+  background-image: url("/images/warn.png");
+}
+
+body .item-6 {
+  width: 120px;
+}
+
+body .item-4 {
+  width: 80px;
+}
+
+body .item-2 {
+  width: 40px;
+}
+
+#arrow {
+  width: 0px;
+  height: 0px;
+  border: 20px solid transparent;
+  border-left-color: yellow;
 }
