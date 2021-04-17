@@ -9,13 +9,30 @@ module.exports = {
     },
     output:{
         path:path.resolve(__dirname,"dist"),
-        filename:"[name].js"
+        filename:"[name].js",
+        publicPath:"http://localhost:8081/"
     },
     module:{
         rules:[
             {
                 test:/\.css$/i,
                 use:[MiniCExtractPlugin.loader,'css-loader']
+            },{
+                test:/\.scss$/,
+                use:[
+                    MiniCExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },{
+                test:/\.(jpg|png|gif)$/,
+                use:[{
+                    loader:'url-loader',
+                    options:{
+                        limit:500,
+                        outputPath:'images/'
+                    }
+                }]
             }
         ]
     },

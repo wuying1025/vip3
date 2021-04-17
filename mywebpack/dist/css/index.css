@@ -1,3 +1,11 @@
 h1{
     color: red;
 }
+.box{
+    background-image: url(http://localhost:8081/images/27cf09479c07d2b14b27d599e1a974c4.png);
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+}
+h2{color:red}
+
