@@ -7,5 +7,12 @@ h1{
     height: 100px;
     background-size: contain;
 }
-h2{color:red}
-
+::-moz-placeholder{
+    color: red;
+}
+:-ms-input-placeholder{
+    color: red;
+}
+::placeholder{
+    color: red;
+}

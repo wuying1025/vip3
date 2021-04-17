@@ -1,12 +1,11 @@
 const path = require('path');
+const entry = require('./webpack_config/entry')
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-    mode:"production",
-    entry:{
-        index:"./src/index.js"
-    },
+    mode:"development",
+    entry,
     output:{
         path:path.resolve(__dirname,"dist"),
         filename:"[name].js",
@@ -16,7 +15,7 @@ module.exports = {
         rules:[
             {
                 test:/\.css$/i,
-                use:[MiniCExtractPlugin.loader,'css-loader']
+                use:[MiniCExtractPlugin.loader,'css-loader','postcss-loader']
             },{
                 test:/\.scss$/,
                 use:[
@@ -33,6 +32,17 @@ module.exports = {
                         outputPath:'images/'
                     }
                 }]
+            },{
+                test:/\.js$/,
+                use:[
+                    {
+                        loader:"babel-loader",
+                        options:{
+                           presets:['@babel/preset-env'] 
+                        }
+                    }
+                ],
+                exclude:/node_modules/
             }
         ]
     },
