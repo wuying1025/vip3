@@ -2,6 +2,7 @@ const path = require('path');
 const entry = require('./webpack_config/entry')
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCExtractPlugin = require('mini-css-extract-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode:"development",
@@ -47,6 +48,14 @@ module.exports = {
         ]
     },
     plugins:[
+        new CopyWebpackPlugin({
+            patterns:[
+                {
+                    from:__dirname+'/src/public',
+                    to:'./public'
+                }
+            ]
+        }),
         new MiniCExtractPlugin({
             filename:'css/[name].css'
         }),
