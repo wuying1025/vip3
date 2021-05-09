@@ -12,6 +12,9 @@
         .container {
             padding: 50px 0;
         }
+        .active{
+            background-color: #ddd;
+        }
     </style>
 </head>
 
@@ -21,10 +24,10 @@
             <div class="form-row align-items-center">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Name</label>
-                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="请输入搜索内容">
+                    <input v-model="searchText" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="请输入搜索内容">
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-2">搜索</button>
+                    <button @click="searchHandle" type="button" class="btn btn-primary mb-2">搜索</button>
                 </div>
             </div>
         </form>
@@ -54,9 +57,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="val in dataList">
+                    <!-- <tr @click="checkLine(val.id)" v-bind:class="{active:val.isCheck}" v-for="val in dataList"> -->
+                    <tr @click="val.isCheck = !val.isCheck" v-bind:class="{active:val.isCheck}" v-for="val in dataList">
                         <th scope="row">
-                            <input type="checkbox" name="" id="">
+                            <input type="checkbox" name="" id="" v-bind:checked="val.isCheck">
                         </th>
                         <td>{{val.title}}</td>
                         <td>{{val.price}}</td>
@@ -81,21 +85,25 @@
             data:{
                 goodsPrice:"",
                 goodsName:"",
+                searchText:"",
                 dataList:[
                     {
                         id:1001,
                         title:"衣服",
-                        price:100
+                        price:100,
+                        isCheck:false
                     },
                     {
                         id:1002,
                         title:"裤子",
-                        price:200
+                        price:200,
+                        isCheck:false
                     },
                     {
                         id:1003,
                         title:"鞋子",
-                        price:300
+                        price:300,
+                        isCheck:false
                     }
                 ]
             },
@@ -116,6 +124,24 @@
                         }
                     })
                     this.dataList = newList;
+                },
+                // 搜索处理
+                searchHandle(){
+                    let newArr = this.dataList.filter((item,key,arr)=>{
+                        if(item.title.includes(this.searchText)){
+                            return item
+                        }
+                    })
+                    this.dataList = newArr
+                },
+                // 单行选中
+                checkLine(id){
+                    this.dataList.map((item)=>{
+                        if(item.id == id){
+                            item.isCheck =!item.isCheck;
+                        }
+                    })
+                    console.log(this.dataList);
                 }
             },
         })

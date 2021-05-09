@@ -24,10 +24,10 @@
         // console.log(a);
 
         let arr = ['a','b','c','d','e','f'];
-        let arr2 = arr.filter((item,key,arr)=>{
+        let arr2 = arr.map((item,key,arr)=>{
             // return "hello" + item
             if(item != 'c'){
-                return ""
+                return item
             }
         })
         console.log(arr2);
