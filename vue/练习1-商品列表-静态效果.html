@@ -12,8 +12,13 @@
         .container {
             padding: 50px 0;
         }
-        .active{
+
+        .active {
             background-color: #ddd;
+        }
+
+        [v-cloak] {
+            display: none;
         }
     </style>
 </head>
@@ -24,7 +29,8 @@
             <div class="form-row align-items-center">
                 <div class="col-auto">
                     <label class="sr-only" for="inlineFormInput">Name</label>
-                    <input v-model="searchText" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="请输入搜索内容">
+                    <input v-model="searchText" type="text" class="form-control mb-2" id="inlineFormInput"
+                        placeholder="请输入搜索内容">
                 </div>
                 <div class="col-auto">
                     <button @click="searchHandle" type="button" class="btn btn-primary mb-2">搜索</button>
@@ -34,11 +40,13 @@
         <form>
             <div class="form-row align-items-center">
                 <div class="col-auto">
-                    <input v-model="goodsName" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="请输入商品名称">
+                    <input v-model="goodsName" type="text" class="form-control mb-2" id="inlineFormInput"
+                        placeholder="请输入商品名称">
                 </div>
                 <div class="col-auto">
                     <div class="input-group mb-2">
-                        <input v-model="goodsPrice" type="text" class="form-control" id="inlineFormInputGroup" placeholder="请输入商品价格">
+                        <input v-model="goodsPrice" type="text" class="form-control" id="inlineFormInputGroup"
+                            placeholder="请输入商品价格">
                     </div>
                 </div>
                 <div class="col-auto">
@@ -56,24 +64,25 @@
                         <th scope="col">操作</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- <tr @click="checkLine(val.id)" v-bind:class="{active:val.isCheck}" v-for="val in dataList"> -->
-                    <tr @click="val.isCheck = !val.isCheck" v-bind:class="{active:val.isCheck}" v-for="val in dataList">
+                <tbody v-cloak>
+                    <tr @click="checkLine(val.id)" v-bind:class="{active:val.isCheck}" v-for="val in dataList">
+                        <!-- <tr @click="val.isCheck = !val.isCheck" v-bind:class="{active:val.isCheck}" v-for="val in dataList"> -->
                         <th scope="row">
                             <input type="checkbox" name="" id="" v-bind:checked="val.isCheck">
                         </th>
                         <td>{{val.title}}</td>
                         <td>{{val.price}}</td>
                         <td>
-                            <button type="button" class="btn btn-primary btn-sm" @click="delHandle(val.id)">删除</button>
+                            <button type="button" class="btn btn-primary btn-sm"
+                                @click.stop="delHandle(val.id)">删除</button>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td colspan="2">总价</td>
-                        
-                        <td>0</td>
-                        <td><button type="button" class="btn btn-primary btn-sm">删除选中</button></td>
+
+                        <td>{{num}}</td>
+                        <td><button @click="delCheck" type="button" class="btn btn-primary btn-sm">删除选中</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -81,67 +90,93 @@
     </div>
     <script>
         new Vue({
-            el:".container",
-            data:{
-                goodsPrice:"",
-                goodsName:"",
-                searchText:"",
-                dataList:[
+            el: ".container",
+            data: {
+                goodsPrice: "",
+                goodsName: "",
+                searchText: "",
+                num: 0,
+                dataList: [
                     {
-                        id:1001,
-                        title:"衣服",
-                        price:100,
-                        isCheck:false
+                        id: 1001,
+                        title: "衣服",
+                        price: 100,
+                        isCheck: false
                     },
                     {
-                        id:1002,
-                        title:"裤子",
-                        price:200,
-                        isCheck:false
+                        id: 1002,
+                        title: "裤子",
+                        price: 200,
+                        isCheck: false
                     },
                     {
-                        id:1003,
-                        title:"鞋子",
-                        price:300,
-                        isCheck:false
+                        id: 1003,
+                        title: "鞋子",
+                        price: 300,
+                        isCheck: false
                     }
                 ]
             },
             methods: {
                 // 添加操作
-                addHandle(){
+                addHandle() {
                     this.dataList.push({
-                        title:this.goodsName,
-                        price:this.goodsPrice
+                        title: this.goodsName,
+                        price: this.goodsPrice
                     })
                 },
                 // 删除处理
-                delHandle(id){
-                    console.log(id);
-                    let newList = this.dataList.filter((item)=>{
-                        if(item.id != id){
+                delHandle(id) {
+                    let newList = this.dataList.filter((item) => {
+                        if (item.id != id) {
                             return item
                         }
                     })
                     this.dataList = newList;
+                    this.sumHandle();
+
                 },
                 // 搜索处理
-                searchHandle(){
-                    let newArr = this.dataList.filter((item,key,arr)=>{
-                        if(item.title.includes(this.searchText)){
+                searchHandle() {
+                    let newArr = this.dataList.filter((item, key, arr) => {
+                        if (item.title.includes(this.searchText)) {
                             return item
                         }
                     })
                     this.dataList = newArr
                 },
                 // 单行选中
-                checkLine(id){
-                    this.dataList.map((item)=>{
-                        if(item.id == id){
-                            item.isCheck =!item.isCheck;
+                checkLine(id) {
+                    let sum = 0;
+                    this.dataList.map((item) => {
+                        if (item.id == id) {
+                            item.isCheck = !item.isCheck;
+                        }
+                        if (item.isCheck) {
+                            sum += item.price;
                         }
                     })
-                    console.log(this.dataList);
+                    this.num = sum
+                },
+                // 多选删除
+                delCheck() {
+                    let newArr = this.dataList.filter((item) => {
+                        if (!item.isCheck) {
+                            return item
+                        }
+                    })
+                    this.dataList = newArr;
+                    this.sumHandle();
+                },
+                // 计算选中总和
+                sumHandle() {
+                    let sum = 0;
+                    this.dataList.map((item) => {
+                        if (item.isCheck) {
+                            sum += item.price
+                        }
+                    })
+                    this.num = sum;
                 }
             },
         })
