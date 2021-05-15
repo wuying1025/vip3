@@ -19,6 +19,28 @@ const routes = [
     path: '/pageone',
     name: 'PageOne',
     component:() => import('../views/PageOne.vue')
+  },
+  {
+    path: '/pagetwo',
+    name: 'PageTwo',
+    component:() => import('../views/PageTwo.vue'),
+    children:[
+      {
+        path:"childone",
+        name:"ChildOne",
+        component:()=>import('../views/ChildOne.vue')
+      },
+      {
+        path:"childtwo",
+        name:"ChildTwo",
+        component:()=>import('../views/ChildTwo.vue')
+      },
+      {
+        path:"childthree/:username",
+        name:"ChildThree",
+        component:()=>import('../views/ChildThree.vue')
+      }
+    ]
   }
 ]
 
