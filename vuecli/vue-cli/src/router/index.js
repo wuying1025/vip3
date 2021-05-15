@@ -18,11 +18,13 @@ const routes = [
   {
     path: '/pageone',
     name: 'PageOne',
+    alias:'/one',
     component:() => import('../views/PageOne.vue')
   },
   {
     path: '/pagetwo',
     name: 'PageTwo',
+    redirect:'/pagetwo/childone',
     component:() => import('../views/PageTwo.vue'),
     children:[
       {
@@ -41,6 +43,9 @@ const routes = [
         component:()=>import('../views/ChildThree.vue')
       }
     ]
+  },{
+    path:"/home",
+    redirect:"/"
   }
 ]
 

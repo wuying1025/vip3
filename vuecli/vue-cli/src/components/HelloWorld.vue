@@ -28,15 +28,20 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <Test/>
   </div>
 </template>
 
 <script>
+import Test from "./Test.vue"
 export default {
   data() {
     return {
       str:"你好"
     }
+  },
+  components:{
+    Test
   },
   methods: {
     clickHandle(){
