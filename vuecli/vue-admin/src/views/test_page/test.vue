@@ -60,31 +60,52 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        form: {
-          name: '',
-          region: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: ''
-        }
-      }
+import { getMessage } from "@/api/message";
+import { addLevel } from "@/api/level"
+export default {
+  created() {
+    this.getData();
+    this.addData();
+  },
+  methods: {
+    // 添加数据
+    addData(){
+        addLevel({
+            levelname:"testa"
+        }).then((res)=>{
+            console.log(res);
+        })
     },
-    methods: {
-      onSubmit() {
-        console.log('submit!');
-      }
-    }
-  }
+    // 获取数据
+    getData() {
+      getMessage().then((res) => {
+        console.log(res);
+      });
+    },
+    onSubmit() {
+      console.log("submit!");
+    },
+  },
+
+  data() {
+    return {
+      form: {
+        name: "",
+        region: "",
+        date1: "",
+        date2: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: "",
+      },
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
-$w:400px;
-.form-bar{
-    width: $w;
+$w: 400px;
+.form-bar {
+  width: $w;
 }
 </style>
