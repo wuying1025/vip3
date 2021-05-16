@@ -181,6 +181,27 @@ export const constantRoutes = [
       
     ]
   },
+  {
+    path: '/level',
+    component: Layout,
+    redirect: '/level/addlevel',
+    name: 'TestPage',
+    meta: { title: '等级管理', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'addlevel',
+        name: 'AddLevel',
+        component: () => import('@/views/level/addLevel'),
+        meta: { title: '添加等级', icon: 'table' }
+      },{
+        path: 'levellist',
+        name: 'LevelList',
+        component: () => import('@/views/level/levelList'),
+        meta: { title: '等级列表', icon: 'table' }
+      }
+      
+    ]
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
